@@ -42,3 +42,11 @@ Route::put('posts/{post}', function (Post $post) {
         'content' => request('content'),
     ]);
 });
+
+Route::delete('/posts/{post}', function (Post $post){
+    $success = $post->delete();
+
+    return[
+        'success' => $success
+    ];
+});
