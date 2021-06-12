@@ -19,6 +19,31 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/posts', function () {
+    return Post::all();
+});
+
 Route::post('/posts', function () {
-    return \App\Models\Post::all();
+    \request()->validate([
+        'title' =>   'required',
+        'content' => 'required'
+    ]);
+
+
+    Post::create([
+        'title' =>   request('title'),
+        'content' => request('content'),
+    ]);
+});
+
+Route::put('posts/{post}', function (Post $post) {
+    \request()->validate([
+        'title' =>   'required',
+        'content' => 'required'
+    ]);
+
+    $post->update([
+        'title' =>   request('title'),
+        'content' => request('content'),
+    ]);
 });
