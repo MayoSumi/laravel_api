@@ -9,7 +9,5 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fallible = [
-        'title', 'content'
-    ];
+    protected $guarded = ['id'];
 }

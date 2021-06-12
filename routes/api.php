@@ -37,11 +37,6 @@ Route::post('/posts', function () {
 });
 
 Route::put('posts/{post}', function (Post $post) {
-    \request()->validate([
-        'title' =>   'required',
-        'content' => 'required'
-    ]);
-
     $post->update([
         'title' =>   request('title'),
         'content' => request('content'),
