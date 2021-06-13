@@ -19,11 +19,17 @@
     }
     #overlay{
         position: fixed;
-        top: 50%;
-        left: 50%;
+        /*top: 50%;*/
+        /*left: 50%;*/
+        padding: 100px;
+        margin: 300px;
+        bottom: 90px;
+        right: 84px;
+        left: 18px;
+        top: 70px;
         z-index: 100;
-        width: 50%;
-        height:50%;
+        width: 860px;
+        height:44px;
         display: none;
         background: rgba(0,0,0,0.6);
     }
